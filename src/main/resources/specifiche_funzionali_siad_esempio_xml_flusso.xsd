@@ -1,0 +1,24 @@
+<xs:schema xmlns:fls="http://flussi.mds.it/flsassdom_1"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://flussi.mds.it/flsassdom_1" elementFormDefault="qualified"
+attributeFormDefault="unqualified">
+	<xs:element name="FlsAssDom_1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fls:Residenza" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Residenza">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ASL" type="fls:codASL"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="codASL">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
